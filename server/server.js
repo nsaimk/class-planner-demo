@@ -7,7 +7,7 @@ const { pool } = require("./dbConfig");
 app.use(cors())
 app.use(express.json())
 
-app.get("/db", async (req, res) => {
+app.get("/", async (req, res) => {
     const queryText = `SELECT * FROM public.user`;
     const result = await pool.query(queryText)
     res.send(result.rows)
